@@ -1,0 +1,21 @@
+# located at: srcs/docker-compose.yml
+
+services:
+  nginx:
+    build:
+      context: ./requirements/nginx
+      dockerfile: Dockerfile
+
+    image: nginx
+    container_name: nginx
+
+    ports:
+      - "443:443"
+    restart: unless-stopped
+
+    networks:
+      - inception_network
+
+networks:
+  inception_network:
+    driver: bridge
