@@ -33,6 +33,8 @@ COPY ./conf/www.conf /etc/php/8.3/fpm/pool.d/www.conf
 COPY ./tools/entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
+RUN sed -i 's/;daemonize = yes/daemonize = no/' /etc/php/8.3/fpm/php-fpm.conf
+
 WORKDIR /var/www/html
 
 EXPOSE 9000

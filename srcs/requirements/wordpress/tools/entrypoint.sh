@@ -56,5 +56,5 @@ else
 
 	echo "WordPress configured successfully."
 fi
-
+mkdir -p /run/php
 exec "$@"
