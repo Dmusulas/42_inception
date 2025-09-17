@@ -21,6 +21,7 @@ services:
       dockerfile: Dockerfile
     image: wordpress
     container_name: wordpress
+    restart: unless-stopped
     depends_on:
       mariadb:
         condition: service_healthy
@@ -50,7 +51,7 @@ services:
       dockerfile: Dockerfile
     image: mariadb
     container_name: mariadb
-    restart: always
+    restart: unless-stopped
     networks:
       - inception_network
     volumes:
