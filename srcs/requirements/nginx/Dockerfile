@@ -1,4 +1,4 @@
-FROM debian:oldstable
+FROM debian:bookworm-slim
 
 RUN apt-get update \
     && apt-get install -y nginx openssl \
@@ -13,7 +13,7 @@ RUN mkdir -p /etc/ssl/private /etc/ssl/certs
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     -keyout /etc/ssl/private/nginx-selfsigned.key \
     -out /etc/ssl/certs/nginx-selfsigned.crt \
-    -subj "/C=US/ST=State/L=City/O=Organization/CN=localhost"
+    -subj "/C=US/ST=State/L=City/O=Organization/CN=dmusulas.42.fr"
 
 
 COPY conf/nginx.conf /etc/nginx/nginx.conf
