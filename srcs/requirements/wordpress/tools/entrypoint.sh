@@ -46,10 +46,11 @@ else
 		--admin_email="$WP_ADMIN_EMAIL" \
 		--skip-email
 
+	# MODIFIED: Uses the WP_USER_ROLE env var, defaults to 'author' if not set
 	wp user create --allow-root \
 		"$WP_USER_LOGIN" \
 		"$WP_USER_EMAIL" \
-		--role=author \
+		--role=${WP_USER_ROLE:-author} \
 		--user_pass="$WP_USER_PASSWORD"
 
 	chown -R www-data:www-data /var/www/html
