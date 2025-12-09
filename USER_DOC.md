@@ -14,7 +14,6 @@ Run the following command at the root of the project:
     make all
 ```
 
-
 **Stop:**
 To stop the services without deleting data:
 

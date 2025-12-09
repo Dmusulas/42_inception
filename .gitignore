@@ -1,3 +1,2 @@
-## secrets/ <- normally we ignore secrets and don't push them to repos :))
-
+secrets/ 
 ## srcs/.env <- kinda same with env 
